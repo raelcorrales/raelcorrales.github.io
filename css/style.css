@@ -3,13 +3,34 @@ body {
   width: 100%;
   overflow-x: hidden;
   font-size: 16px;
-  --hightlight-color: #03588c;
-  --bg-color: #f2f2f2;
-  --icon-color: #2b718c;
-  --icon-light-color: #8BA5D9;
-  --lighter-color: rgba(50, 121, 166, 0.3);
-  
-  --hightlight-light-color: #FD76CB;
+}
+body {
+  /* Main Section */
+  --main-bg: #FFFFFF;
+  --main-text-color: #FFFFFF;
+  --main-hightlight-color: #000000;
+
+  /* Professional Summary Vars */
+  --summary-bg: #FFFFFF;
+  --summary-text-color: #F24444;
+  --summary-hightlight-color: #29A63C;
+
+  /* Work Experience Vars */
+  --experience-bg: #04668C;
+  --experience-text-color: #FFFFFF;
+  --experience-hightlight-color: #0BBFBF;
+
+  /* Skills Vars */
+  --skills-bg: #0BBFBF;
+  --skills-bg-island: #f0f0f0;
+  --skills-text-color: #333333;
+  --skills-main-skill-color: #F29C94;
+  --skills-secondary-skill-color: #F69E92;
+
+  /* Education & Certifications Vars */
+  --certification-bg: #F24444;
+  --certification-text-color: #333333;
+  --certification-hightlight-color: #04668C;
 }
 body {
   font-size: 16px;
@@ -116,7 +137,7 @@ span.hightlight {
   padding: 0;
   padding-bottom: 0.5rem;
   
-  color: var(--bg-color);
+  color: var(--main-text-color);
 }
 #header .subtitle {
   display: flex;
@@ -129,10 +150,10 @@ span.hightlight {
 }
 #header .subtitle .main_role {
   font-size: 1.3rem;
-  color: var(--bg-color);
+  color: var(--main-text-color);
 }
 #header .subtitle .main_role i {
-  color: var(--icon-light-color);
+  color: var(--main-hightlight-color);
 }
 
 #header .social {
@@ -148,7 +169,7 @@ span.hightlight {
   align-content: center;
   justify-content: center;
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.5rem;
 }
 #header .social ul li {
   font-size: 1.2rem;
@@ -167,12 +188,44 @@ span.hightlight {
 }
 #header .social ul li i {
   font-size: 1.5rem;
-  color: var(--icon-light-color);
+  color: var(--main-hightlight-color);
 }
 #header .social ul li span {
   font-size: 1.2rem;
-  padding-left: 4px;
-  color: var(--bg-color);
+  padding-left: 0.6rem;
+  color: var(--main-text-color);
+}
+
+#header .cta {
+  padding: 0.2rem 0;
+  padding-top: 0.7rem;
+}
+#header .cta ul {
+  margin: 0;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 1.3rem;
+}
+#header .cta ul li {}
+#header .cta ul li a {
+  display: inline-block;
+  padding: 0.5rem 1.1rem;
+  border-radius: 0.3rem;
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+#header .cta ul li a:hover {
+  background-color: #0062cc;
 }
 
 nav {
@@ -214,6 +267,9 @@ nav ul li a {
 
 .vpbox {
   min-height: 100vh;
+
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 /* PROFESSIONAL SUMMARY */
@@ -253,17 +309,17 @@ nav ul li a {
 /* WORK EXPERIENCE */
 #work-experience.boxcenter {
 	min-height: 100vh;
-	background-color: #F24141;
+	background-color: var(--experience-bg);
   
-	color: var(--bg-color);
+	color: var(--experience-text-color);
 }
 #work-experience .location i,
 #work-experience .role i,
 #work-experience .period i {
-  color: #F0DD3A;
+  color: var(--experience-hightlight-color);
 }
 #work-experience .hightlight {
-  color: #F0DD3A;
+  color: var(--experience-hightlight-color);
 }
 #work-experience h2 {
 	font-size: 2.4rem;
@@ -329,8 +385,70 @@ nav ul li a {
 /* SKILLS */
 #skills.boxcenter {
 	min-height: 100vh;
-	background-color: #0AADBF;
-	color: var(--bg-color);
+	background-color: var(--skills-bg);
+	color: var(--skills-text-color);
+}
+
+#skills ul.teck_stacks{
+  display: flex;
+    gap: 20px;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+#skills ul.teck_stacks > li {
+  background-color: var(--skills-bg-island);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+#skills ul.teck_stacks > li ul.tech_skills {
+  list-style: none;
+    padding: 0;
+    display: flex
+;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#skills ul.teck_stacks > li ul.tech_skills > li {
+  display: flex;
+    margin-bottom: 10px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+#skills ul.teck_stacks > li ul.tech_skills > li img {
+  width: 30px;
+  height: 30px;
+}
+
+#skills ul.teck_stacks > li ul.tech_skills > li h4 {}
+#skills ul.teck_stacks > li ul.tech_skills > li .main-skill {
+  width: 100%;
+  height: 10px;
+  background-color: var(--skills-main-skill-color);
+  margin-top: 5px;
+}
+#skills ul.teck_stacks > li ul.tech_skills > li .secondary-skill {
+  width: 80%;
+  height: 10px;
+  background-color: var(--skills-secondary-skill-color);
+  margin-top: 5px;
 }
 
 /* EDUCATION & CERTIFICATIONS */
@@ -360,6 +478,8 @@ nav ul li a {
   padding: 0.3rem;
   padding-top: 1.2rem;
   border-radius: 6px;
+
+  background-color: rgba(255, 255, 255, 0.5);
   
 }
 #education-certification ul li .degree {
